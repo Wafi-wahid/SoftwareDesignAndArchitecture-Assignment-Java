@@ -22,12 +22,5 @@ public class Clerk extends Staff {
         currentdeskNumber++;
     }
     
-    // Printing Clerk's Info
-    @Override
-    public void printInfo()
-    {
-        super.printInfo();
-        System.out.println("Desk Number: " + deskNo);
-    }
-    
+   
 }   // Clerk's Class Closed

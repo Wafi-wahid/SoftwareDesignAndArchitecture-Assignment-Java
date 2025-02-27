@@ -3,24 +3,24 @@ package LMS;
 import java.util.ArrayList;
 
 public class HoldRequestOperations {
+    private ArrayList<HoldRequest> holdRequests; // No static field
 
-   static ArrayList <HoldRequest> holdRequests;
-
-    public HoldRequestOperations()
-    {
-        holdRequests= new ArrayList<>();
+    public HoldRequestOperations() {
+        this.holdRequests = new ArrayList<>();
     }
-    // adding a hold req.
-    public void addHoldRequest(HoldRequest hr)
-    {
+
+    public void addHoldRequest(HoldRequest hr) {
         holdRequests.add(hr);
     }
-    // removing a hold req.
-    public void removeHoldRequest()
-    {
-        if(!holdRequests.isEmpty())
-        {
+
+    public void removeHoldRequest() {
+        if (!holdRequests.isEmpty()) {
             holdRequests.remove(0);
         }
     }
+
+    public ArrayList<HoldRequest> getHoldRequests() {
+        return holdRequests;
+    }
 }
+

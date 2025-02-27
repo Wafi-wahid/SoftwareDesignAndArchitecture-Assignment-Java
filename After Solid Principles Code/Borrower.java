@@ -52,27 +52,8 @@ public class Borrower extends Person
             System.out.println("\nNo borrowed books.");                
     }
     
-    // Printing Book's Info kept on Hold by Borrower
-    public void printOnHoldBooks()
-    {
-        if (!onHoldBooks.isEmpty())
-        { 
-            System.out.println("\nOn Hold Books are: ");
-            
-            System.out.println("------------------------------------------------------------------------------");            
-            System.out.println("No.\t\tTitle\t\t\tAuthor\t\t\tSubject");
-            System.out.println("------------------------------------------------------------------------------");
-            
-            for (int i = 0; i < onHoldBooks.size(); i++)
-            {                      
-                System.out.print(i + "-" + "\t\t");
-                onHoldBooks.get(i).getBook().printInfo();
-                System.out.print("\n");
-            }
-        }
-        else
-            System.out.println("\nNo On Hold books.");                
-    }
+
+
    
     // Updating Borrower's Info
     public void updateBorrowerInfo() throws IOException
@@ -129,42 +110,27 @@ public class Borrower extends Person
             System.out.println("\nThe name is successfully updated.");
         }
     }
+    // Printing Book's Info kept on Hold by Borrower***********
+    public void printOnHoldBooks()
+    {
+        if (!onHoldBooks.isEmpty())
+        { 
+            System.out.println("\nOn Hold Books are: ");
+            
+            System.out.println("------------------------------------------------------------------------------");            
+            System.out.println("No.\t\tTitle\t\t\tAuthor\t\t\tSubject");
+            System.out.println("------------------------------------------------------------------------------");
+            
+            for (int i = 0; i < onHoldBooks.size(); i++)
+            {                      
+                System.out.print(i + "-" + "\t\t");
+                onHoldBooks.get(i).getBook().printInfo();
+                System.out.print("\n");
+            }
+        }
+        else
+            System.out.println("\nNo On Hold books.");                
+    }
+   
 
-    /*-- Adding and Removing from Borrowed Books---*/
-    public void addBorrowedBook(Loan iBook)
-    {
-        borrowedBooks.add(iBook);
-    }
-    
-    public void removeBorrowedBook(Loan iBook)
-    {
-        borrowedBooks.remove(iBook);
-    }    
-    
-    /*-------------------------------------------*/
-    
-    /*-- Adding and Removing from On Hold Books---*/
-    public void addHoldRequest(HoldRequest hr)
-    {
-        onHoldBooks.add(hr);
-    }
-    
-    public void removeHoldRequest(HoldRequest hr)
-    {
-        onHoldBooks.remove(hr);
-    }
-    
-    /*-------------------------------------------*/
-    
-    /*-----------Getter FUNCs. ------------------*/
-    public ArrayList<Loan> getBorrowedBooks()
-    {
-        return borrowedBooks;
-    }
-    
-    public ArrayList<HoldRequest> getOnHoldBooks()
-    {
-        return onHoldBooks;
-    }
-    /*-------------------------------------------*/
 }
